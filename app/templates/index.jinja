@@ -1,0 +1,12 @@
+{% extends "base.jinja" %}
+  
+{% block content %}
+
+  <p>These items are to be needed to make food. {{ titles['pasta'][0] }}</p>
+  <p>We are going to add more items to {{ titles.sauce[0] }}</p>
+
+  {% for food in foods %}
+    <p>{{ food.title() }} is needed {{ foods[food][0] }}</p>
+  {% endfor %}
+
+{% endblock content %} 

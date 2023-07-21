@@ -1,0 +1,4 @@
+recipes_venv/
+.env
+_pycache__/
+migrations/
