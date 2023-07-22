@@ -1,0 +1,15 @@
+{%extends "base.jinja"%}
+
+{%block content%}
+
+<h2>{{username}}</h2>
+<main class = 'recipes'>
+<ul>
+    {% for post in recipes %}
+    <li>{{post.body}} posted: {{post.timestamp}}</li>
+    {%endfor%}
+</ul>
+
+</main>
+
+{%endblock content%}

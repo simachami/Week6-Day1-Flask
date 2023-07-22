@@ -23,6 +23,10 @@
       </div>
     {% endfor %}
   {% endwith %}
+  {%if current_user.is_authenticated%}
+    {{current_user.username}}
+    {%include "post.jinja"%}
+  {%endif%}
   {% block content %}{% endblock %}
 
 </body>

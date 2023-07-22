@@ -16,4 +16,14 @@ class SignUpForm(FlaskForm):
     verify_password = PasswordField('Confirm Password:', validators=[ DataRequired(), EqualTo('password') ])
     submit = SubmitField('Sign Up')
 
+class RecipeForm(FlaskForm):
+    body = StringField('Post a recipe:', validators=[DataRequired()])
+    submit = SubmitField('Post')
+
+
+class RecipeSearchForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    submit = SubmitField('Search User')
+
+
     

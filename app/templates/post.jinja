@@ -1,0 +1,6 @@
+
+  <form action="{{ url_for('social.post') }}" method="POST">
+    {{ g.recipe_form.hidden_tag() }}
+    <span>{{ g.recipe_form.body() }}</span>
+    <p>{{ g.recipe_form.submit() }}</p>
+  </form>
