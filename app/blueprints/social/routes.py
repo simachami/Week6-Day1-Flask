@@ -1,5 +1,5 @@
 from flask import render_template, redirect, flash, url_for, g 
-from flask_login import current_user
+from flask_login import current_user, login_required
 from app import app
 from app.forms import RecipeForm, RecipeSearchForm
 from app.models import User, Recipe
@@ -21,6 +21,7 @@ def post():
     return redirect(url_for('social.profile', username = current_user.username))
 
 @bp.route('/profile/<username>')
+@login_required
 def profile(username):
     user = User.query.filter_by(username=username).first()
     if user:

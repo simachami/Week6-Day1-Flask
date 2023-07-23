@@ -18,6 +18,19 @@ class User(UserMixin,db.Model):
     recipes = db.relationship('Recipe', backref = 'author', lazy=True)
 
 
+    def to_dict(self):
+        return {
+            'first_name': self.first_name,     
+            'last_name': self.last_name,
+            'email': self.email,
+            'username': self.username,
+            'recipes': [{
+            'body':post.body, 
+            'timestamp':post.timestamp
+        } for post in self.posts ]
+        }
+
+
     def __repr__(self):
         return f'<User: {self.username}'
     
